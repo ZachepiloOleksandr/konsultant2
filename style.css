@@ -56,7 +56,30 @@
         background: #d47318;
       }
       
+.vspluvashka {
+  display: none;
+  position: absolute;
+  width: 86%;
+  height: 90%;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background-color: rgb(247, 247, 247);;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: 5%;
+  text-align: left;
+  padding: 10px;
+  overflow: scroll;
+  font-size: 4vw;
+}
+
+.vspluvashka h3 {
+  text-align: center;
+}
 
 
-
+.vspluvashka button {
+  margin: auto;
+  display: block;
+}
       
