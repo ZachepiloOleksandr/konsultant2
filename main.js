@@ -40,11 +40,11 @@ const strelkaClickHandler = () => {
     const blik_client = document.getElementById("client");
     blik_client.style.left = '-'+window.innerWidth+'px';
     
-    const strelkaLeft = document.getElementById("strelkaLeft");
-    strelkaLeft.style.display ="flex";
+    // const strelkaLeft = document.getElementById("strelkaLeft");
+    // strelkaLeft.style.display ="flex";
 
-    const strelka = document.getElementById("strelka");
-    strelka.style.display ="none";
+    // const strelka = document.getElementById("strelka");
+    // strelka.style.display ="none";
     
 
 };
@@ -53,11 +53,11 @@ const strelkaLeftClickHandler = () => {
     blik_client.style.left = '0px';
 
     
-    const strelkaLeft = document.getElementById("strelkaLeft");
-    strelkaLeft.style.display ="none";
+    // const strelkaLeft = document.getElementById("strelkaLeft");
+    // strelkaLeft.style.display ="none";
 
-    const strelka = document.getElementById("strelka");
-    strelka.style.display ="flex";
+    // const strelka = document.getElementById("strelka");
+    // strelka.style.display ="flex";
     
 
 };
