@@ -91,21 +91,30 @@
   margin: auto;
   display: block;
 }
-.strelka {
+
+.strelka.swiper-button-next {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 40px;
   width: 35vw;
   height: 10vw;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: right;
+  white-space: nowrap;
 }
 
-.left {
+.strelka.swiper-button-next:after,
+.strelka.swiper-button-prev:after {
+  content: none;
+}
+
+.left.swiper-button-prev {
   display: none;
-  left: 20px;
+  left: 50px;
+  top: 40px;
+  white-space: nowrap;
 }
 
 .strelka img {
