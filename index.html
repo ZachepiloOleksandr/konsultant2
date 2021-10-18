@@ -4,6 +4,11 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link href="./style.css" rel="stylesheet">
     <script src="./main.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <title>
 Адвокатське об'єднання "Захист"
 </title>
@@ -14,50 +19,72 @@
     <img src="https://zahist.wp.branderstudio.com/wp-content/uploads/2021/07/logo_zahist-1.svg" >
 
     <h1>
-        ТИП КЛІЄНТА
+        ПК 1
     </h1>
+
+    <div class="strelka left" id="strelkaLeft">
+        <img src="./IMG/right_icon-icons.com_61212.svg" alt="">
+        Тип клієнта
+    </div>
+    <div class="strelka" id="strelka">
+        Калькулятор
+        <img src="./IMG/right_icon-icons.com_61212.svg" alt="">
+    </div>
+
 </header>
 
-<main> 
-    Інтелект
-    <br>
-    <input type="range" min="1" max="4" value="1" id="inteligece_input"> <span id="inteligece_text">1</span>
-    <br>
-    Критичність мислення
-    <br>
-    <input type="range" min="1" max="4" value="1" id="critical_input"> <span id="critical_text">1</span>
-    <br>
-    Ініціативність
-    <br>
-    <input type="range" min="1" max="4" value="1" id="initiate_input"> <span id="initiate_text">1</span>
-    <br>
-    Поступливість
-    <br>
-    <input type="range" min="1" max="4" value="1" id="ustupchivost_input"> <span id="ustupchivost_text">1</span>
-    <br>
-    Дружелюбність
-    <br>
-    <input type="range" min="1" max="4" value="1" id="friendlyest_input"> <span id="friendlyest_text">1</span>
-    <br>
-    Емоційність
-    <br>
-    <input type="range" min="1" max="4" value="1" id="emotions_input"> <span id="emotions_text">1</span>
-    <br>
-    <br>
-    <button id="button">
-        ОБРОБИТИ
-    </button>
-    <div class="vspluvashka" id="vspluvashka">
-        <h3>Характеристика клієнта</h3>
-        <p id="res1"></p>
-        <h3>Головне для клієнта</h3>
-        <p id="res2"></p>
-        <h3>Порада консультанту</h3>
-        <p id="res3"></p>
-        <button id="ok">
-            ОК
+<main class="swiper"> 
+    <div  class="swiper-wrapper">
+
+
+    <div class="swiper-slide" id="client">
+        <h2>
+            ТИП КЛІЄНТА
+        </h2>
+        Інтелект
+        <br>
+        <input type="range" min="1" max="4" value="1" id="inteligece_input"> <span id="inteligece_text">1</span>
+        <br>
+        Критичність мислення
+        <br>
+        <input type="range" min="1" max="4" value="1" id="critical_input"> <span id="critical_text">1</span>
+        <br>
+        Ініціативність
+        <br>
+        <input type="range" min="1" max="4" value="1" id="initiate_input"> <span id="initiate_text">1</span>
+        <br>
+        Поступливість
+        <br>
+        <input type="range" min="1" max="4" value="1" id="ustupchivost_input"> <span id="ustupchivost_text">1</span>
+        <br>
+        Дружелюбність
+        <br>
+        <input type="range" min="1" max="4" value="1" id="friendlyest_input"> <span id="friendlyest_text">1</span>
+        <br>
+        Емоційність
+        <br>
+        <input type="range" min="1" max="4" value="1" id="emotions_input"> <span id="emotions_text">1</span>
+        <br>
+        <br>
+        <button id="button">
+            ОБРОБИТИ
         </button>
+        <div class="vspluvashka" id="vspluvashka">
+            <h3>Характеристика клієнта</h3>
+            <p id="res1"></p>
+            <h3>Головне для клієнта</h3>
+            <p id="res2"></p>
+            <h3>Порада консультанту</h3>
+            <p id="res3"></p>
+            <button id="ok">
+                ОК
+            </button>
+        </div>
     </div>
+    <div class="swiper-slide" id="calc">
+
+    </div>
+</div>
 </main>
 
 

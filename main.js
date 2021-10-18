@@ -36,6 +36,32 @@ const emotionsHandler = (event) => {
     emotions_text.innerHTML = event.target.value;
     event.target.focus();
 };
+const strelkaClickHandler = () => {
+    const blik_client = document.getElementById("client");
+    blik_client.style.left = '-'+window.innerWidth+'px';
+    
+    const strelkaLeft = document.getElementById("strelkaLeft");
+    strelkaLeft.style.display ="flex";
+
+    const strelka = document.getElementById("strelka");
+    strelka.style.display ="none";
+    
+
+};
+const strelkaLeftClickHandler = () => {
+    const blik_client = document.getElementById("client");
+    blik_client.style.left = '0px';
+
+    
+    const strelkaLeft = document.getElementById("strelkaLeft");
+    strelkaLeft.style.display ="none";
+
+    const strelka = document.getElementById("strelka");
+    strelka.style.display ="flex";
+    
+
+};
+
 
 
 const buttonClick = () => {
@@ -186,6 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const emotions_input = document.getElementById("emotions_input");
     const button = document.getElementById("button");
     const ok = document.getElementById("ok");
+    const strelka = document.getElementById("strelka");
+    const strelkaLeft = document.getElementById("strelkaLeft");    
 
     inteligece_input.addEventListener('input', inteligeceHandler)
     critical_input.addEventListener('input', criticalHandler)
@@ -195,6 +223,30 @@ document.addEventListener("DOMContentLoaded", () => {
     emotions_input.addEventListener('input', emotionsHandler)
     button.addEventListener('click', buttonClick);
     ok.addEventListener('click', okClick);
+    strelka.addEventListener('click', strelkaClickHandler);
+    strelkaLeft.addEventListener('click', strelkaLeftClickHandler);
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+      
+        // If we need pagination
+        // pagination: {
+        //   el: '.swiper-pagination',
+        // },
+      
+        // Navigation arrows
+        // navigation: {
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // },
+      
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      });
 });
 
 

@@ -15,7 +15,15 @@
         border-radius: 10px;
     }
     main {
+        position: relative;
         font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main > div {
+      position: absolute;
+      width: 100%;
+      transition: left 0.5s linear;
+      left: 0;
     }
 
     main span {
@@ -83,4 +91,60 @@
   margin: auto;
   display: block;
 }
-      
+.strelka {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 35vw;
+  height: 10vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.left {
+  display: none;
+  left: 20px;
+}
+
+.strelka img {
+  width: 10vw;
+  height: 10vw;
+}
+.left img {
+transform: rotate(180deg);
+}
+
+h1 {
+  animation: pulsing 2s infinite;
+}
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7)
+  }
+  50% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
+  100% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7)
+  }
+  50% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
+  100% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+  }
+}
