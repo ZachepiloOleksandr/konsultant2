@@ -92,11 +92,12 @@
   display: block;
 }
 
-.strelka.swiper-button-next {
+.strelka.swiper-button-next,
+.strelka.swiper-button-prev {
   position: absolute;
   right: 20px;
   top: 40px;
-  width: 35vw;
+  width: auto;
   height: 10vw;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
@@ -110,9 +111,10 @@
   content: none;
 }
 
-.left.swiper-button-prev {
+.strelka.swiper-button-prev {
   /* display: none; */
-  left: 50px;
+  left: 20px;
+  right: unset;
   top: 40px;
   white-space: nowrap;
 }

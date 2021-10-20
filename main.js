@@ -37,8 +37,8 @@ const emotionsHandler = (event) => {
     event.target.focus();
 };
 const strelkaClickHandler = () => {
-    const blik_client = document.getElementById("client");
-    blik_client.style.left = '-'+window.innerWidth+'px';
+    // const blik_client = document.getElementById("client");
+    // blik_client.style.left = '-'+window.innerWidth+'px';
     
     // const strelkaLeft = document.getElementById("strelkaLeft");
     // strelkaLeft.style.display ="flex";
@@ -49,8 +49,8 @@ const strelkaClickHandler = () => {
 
 };
 const strelkaLeftClickHandler = () => {
-    const blik_client = document.getElementById("client");
-    blik_client.style.left = '0px';
+    // const blik_client = document.getElementById("client");
+    // blik_client.style.left = '0px';
 
     
     // const strelkaLeft = document.getElementById("strelkaLeft");
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-      
+        noSwipingClass: "no_swipe"
         // And if we need scrollbar
         // scrollbar: {
         //   el: '.swiper-scrollbar',
