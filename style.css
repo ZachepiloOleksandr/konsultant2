@@ -104,6 +104,7 @@
   align-items: center;
   justify-content: right;
   white-space: nowrap;
+  outline: none;
 }
 
 .strelka.swiper-button-next:after,
