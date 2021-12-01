@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ReactSwipe from 'react-swipe';
 import { Carousel } from 'antd';
 
 import Helper from './Helper';
