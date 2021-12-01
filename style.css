@@ -128,35 +128,10 @@
 transform: rotate(180deg);
 }
 
-h1 {
-  animation: pulsing 2s infinite;
+.select {
+padding: 8px;  
 }
-@-webkit-keyframes pulsing {
-  0% {
-    -webkit-transform: scale(0.7, 0.7);
-    transform: scale(0.7, 0.7)
+#calc {
+  text-align: left;
+  margin: 0 10vw;  
   }
-  50% {
-    -webkit-transform: scale(1.0, 1.0);
-    transform: scale(1.0, 1.0);
-  }
-  100% {
-    -webkit-transform: scale(0.7, 0.7);
-    transform: scale(0.7, 0.7);
-  }
-}
-
-@keyframes pulsing {
-  0% {
-    -webkit-transform: scale(0.7, 0.7);
-    transform: scale(0.7, 0.7)
-  }
-  50% {
-    -webkit-transform: scale(1.0, 1.0);
-    transform: scale(1.0, 1.0);
-  }
-  100% {
-    -webkit-transform: scale(0.7, 0.7);
-    transform: scale(0.7, 0.7);
-  }
-}

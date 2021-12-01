@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(245, 244, 241);
+}
+
+.vspluvashka {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #5e5c5c40;
+}
+
+.vspluvashka_content {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+input[type="range"] {
+  height: 20px;
+}
+
+button {
+  padding: 10px;
+}
