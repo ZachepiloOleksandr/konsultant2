@@ -11,6 +11,7 @@ import './App.css';
 const App = () => {
   const vplivashkaState = useState(false);
 
+  console.log('---- APP');
   return (
     
     <div className="App">

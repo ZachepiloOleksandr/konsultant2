@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Slider } from 'antd';
 import { Portal } from 'react-portal';
 
 const bokvu_texts = {
@@ -189,71 +190,56 @@ const Helper = (props) => {
         });
     }, []);
 
-    useEffect(() => {
-        console.log('--------');
-        console.log('--------');
-    }, [int, crt]);
+console.log('-----------');
 
   return (
-    <div class="swiper-slide" id="client">
+    <div className="helper">
       <h2>
           ТИП КЛІЄНТА
       </h2>
       Інтелект
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={int} onChange={(e) => setInt(e.target.value)} />
-       <span id="inteligece_text">
-            {int}
-       </span>
-      <br />
-      <br />
+      <span id="inteligece_text">{int}</span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={int} onChange={(e) => setInt(e.target.value)}  />
+      </div>
       Критичність мислення
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={crt} onChange={(e) => setCrt(e.target.value)} /> 
-      <span id="critical_text">
-      {crt} 
-      </span>
-      <br />
-      <br />
+      <span id="critical_text">{crt}</span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={crt} onChange={(e) => setCrt(e.target.value)} /> 
+      </div>
       Ініціативність
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={ini} onChange={(e) => setIni(e.target.value)}/>
-       <span id="initiate_text">
-       {ini}
-       </span>
-      <br />
-      <br />
+      <span id="initiate_text">{ini}</span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={ini} onChange={(e) => setIni(e.target.value)}/>
+      </div>
       Поступливість
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={pst} onChange={(e) => setPst(e.target.value)}/>
-       <span id="ustupchivost_text">
-       {pst}
-       </span>
-      <br/>
-      <br />
+      <span id="ustupchivost_text">{pst}</span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={pst} onChange={(e) => setPst(e.target.value)}/>
+      </div>
       Дружелюбність
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={dru} onChange={(e) => setDru(e.target.value)}/> 
-      <span id="friendlyest_text">
-          {dru}
-          </span>
-      <br />
-      <br />
+      <span id="friendlyest_text">{dru} </span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={dru} onChange={(e) => setDru(e.target.value)}/> 
+      </div>
       Емоційність
       <br />
-      <input class="no_swipe" type="range" min="1" max="4" value={emo} onChange={(e) => setEmo(e.target.value)}/> 
-      <span id="emotions_text">
-      {emo}
-      </span>
-      <br />
-      <br />
+      <span id="emotions_text">{emo}</span>
+      <div className="inputRow">
+        <input className="no_swipe" type="range" min="1" max="4" value={emo} onChange={(e) => setEmo(e.target.value)}/> 
+      </div>
       <br />
       <button onClick={onStart}>
           ОБРОБИТИ
       </button>
-      <Portal>
       {
-        vpluvashka !== false && <div class="vspluvashka" id="vspluvashka">
+        vpluvashka !== false && <Portal node={document && document.getElementById('portal')}>
+        <div className="vspluvashka" id="vspluvashka">
 
             <div className="vspluvashka_content">
                 <h3>Характеристика клієнта</h3>
@@ -273,8 +259,9 @@ const Helper = (props) => {
                 </button>
             </div>
         </div>
-        }
-        </Portal>
+    </Portal>
+    }
+        
     </div>
   );
 }
