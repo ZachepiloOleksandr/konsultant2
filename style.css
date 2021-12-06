@@ -1,0 +1,137 @@
+
+    body{
+        background-color: rgb(245, 245, 245);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        text-align: center;
+    }
+   
+    button {
+      font-size: 6vw;
+        padding: 10px;
+        background: linear-gradient(90deg, rgba(238,151,82,1) 21%, rgba(241,58,15,1) 61%, rgba(255,0,136,1) 100%);
+        color: rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+    main {
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main > div {
+      position: absolute;
+      width: 100%;
+      transition: left 0.5s linear;
+      left: 0;
+    }
+
+    main span {
+        font-size: 26px;
+    }
+
+    input[type=range] {
+        height: 20px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 80%;
+        background: none;
+      }
+      input[type=range]:focus {
+        outline: none;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 14px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 1px 1px 1px #50555C;
+        background: #ebad7b;
+        border-radius: 14px;
+        border: 0px solid #000000;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        box-shadow: 0px 0px 0px #000000;
+        border: 0px solid #000000;
+        height: 30px;
+        width: 29px;
+        margin-top: -8px;
+        border-radius: 50%;
+        background: #e04e14;
+        cursor: pointer;
+        -webkit-appearance: none;
+      }
+      input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #d47318;
+      }
+      
+.vspluvashka {
+  display: none;
+  position: absolute;
+  width: 86%;
+  height: 90%;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background-color: rgb(247, 247, 247);;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: 5%;
+  text-align: left;
+  padding: 10px;
+  overflow: scroll;
+  font-size: 4vw;
+}
+
+.vspluvashka h3 {
+  text-align: center;
+}
+
+
+.vspluvashka button {
+  margin: auto;
+  display: block;
+}
+
+.strelka.swiper-button-next,
+.strelka.swiper-button-prev {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  width: auto;
+  height: 10vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  white-space: nowrap;
+  outline: none;
+}
+
+.strelka.swiper-button-next:after,
+.strelka.swiper-button-prev:after {
+  content: none;
+}
+
+.strelka.swiper-button-prev {
+  /* display: none; */
+  left: 20px;
+  right: unset;
+  top: 40px;
+  white-space: nowrap;
+}
+
+.strelka img {
+  width: 10vw;
+  height: 10vw;
+}
+.left img {
+transform: rotate(180deg);
+}
+
+.select {
+padding: 8px;  
+}
+#calc {
+  text-align: left;
+  margin: 0 10vw;  
+  }
