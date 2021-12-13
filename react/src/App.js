@@ -23,6 +23,7 @@ const App = () => {
         <Helper vplivashkaState={vplivashkaState} />
         <Calc />
       </Carousel>
+      {/* <Request /> */}
     </div>
   );
 }

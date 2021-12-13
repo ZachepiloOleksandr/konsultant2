@@ -13,7 +13,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +23,11 @@ body {
 }
 
 .vspluvashka_content {
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 12px;
   border-radius: 8px;
   background-color: #fff;
@@ -41,6 +47,26 @@ button {
 .helper .inputRow {
   padding-bottom: 10px;
   border-bottom: 1px solid #000;
+}
+
+.calc, .helper {
+  padding: 20px 0;
+}
+
+.calc .ant-select {
+  width: 90%;
+  margin-left: 16px;
+}
+
+.calc > div {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.calc .label {
+  width: 100px;
 }
 
 input[type=range]:focus {

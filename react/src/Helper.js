@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Slider } from 'antd';
+import { Button } from 'antd';
 import { Portal } from 'react-portal';
 
 const bokvu_texts = {
@@ -42,6 +42,7 @@ const golovne_texts = {
     "G": "Привітні і дружні відносини в процесі ведення справи.",
     "E": "Видимість бурхливої та емоційної деятеьлності в роботі.",
 };
+
 const dii_texts = {
     "A": "Чітко і детально викладати свої думки. Говорити повільно. Надавати точні дані і вміти їх довести. Намалювати клієнтові повну картину. Бути логічним. Не підштовхувати клієнта до швидких рішень. Не намагатися домінувати.",
     "T": "Ретельно готуватися до зустрічі. Бути лаконічним. Бути енергійним і швидко переходити до справи. Триматися діловито і професійно. Запропонувати можливість вибору. Бути наполегливим. Наголосити на невідкладності і актуальності швидких дій прямо зараз.",
@@ -57,7 +58,7 @@ const Helper = (props) => {
     const [dru, setDru] = useState(1);
     const [emo, setEmo] = useState(1);
 
-    const [vpluvashka, setVspluvashka] = props.vplivashkaState;
+    const [vpluvashka, setVspluvashka] = useState(false);;
     const [text1, setText1] = useState('');
     const [text2, setText2] = useState('');
     const [text3, setText3] = useState('');
@@ -66,7 +67,6 @@ const Helper = (props) => {
         let res1 = '';
         let res2 = '';
         let res3 = '';
-        setVspluvashka(true);
 
         const _int = int;
         const _crt = crt;
@@ -92,7 +92,6 @@ const Helper = (props) => {
             types.DRU[_dru],
             types.EMO[_emo],
         ];
-        console.log(firstStep);
         
         let kolich = {
             "E": 0,
@@ -127,56 +126,47 @@ const Helper = (props) => {
             let num = poryadok[index - 1]?.num + 1 || 1;
 
             if(index !== 0) {
-                console.log(num);
                 if (element.value === poryadok[0].value) {
                     num = poryadok[0].num;
                     poryadok[index].num = num;
                 }
-    console.log(num);
 
                 if (element.key !== poryadok[1].key &&  element.value === poryadok[1].value) {
                     num = poryadok[1].num;
                     poryadok[index].num = num;
                 }
-    console.log(num);
 
                 if (element.key !== poryadok[2].key && element.value === poryadok[2].value) {
                     num = poryadok[2].num || num;
                     poryadok[index].num = num;
                 }
-
             }
 
-
             poryadok[index].num = num;
-            console.log(element.key, element.value);
-            console.log(status_texts[num] , bokvu_texts[element.key][num]);
-            console.log(status_texts[num] + bokvu_texts[element.key][num]);
             stroka = stroka + status_texts[num] + bokvu_texts[element.key][num];
         });
 
         res1 = stroka;
-
     
-        poryadok.forEach((element, index) => {
+        poryadok.forEach((element) => {
             if (element.num === 1) {
                 // stroka = stroka + '\n Що головне для клиэнта? \n' + golovne_texts[element.key];
                 res2 = golovne_texts[element.key];
 
             }
         });
-        poryadok.forEach((element, index) => {
+        poryadok.forEach((element) => {
             if (element.num === 1) {
                 // stroka = stroka + '\n Дії консультанта \n' + dii_texts[element.key];
                 res3 = dii_texts[element.key];
 
             }
         });
-    
-        console.log(res1, res2, res3);
+
         setText1(res1);
         setText2(res2);
         setText3(res3);
+        setVspluvashka(true);
     }
 
     useEffect(() => {
@@ -190,80 +180,78 @@ const Helper = (props) => {
         });
     }, []);
 
-console.log('-----------');
-
-  return (
-    <div className="helper">
-      <h2>
-          ТИП КЛІЄНТА
-      </h2>
-      Інтелект
-      <br />
-      <span id="inteligece_text">{int}</span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={int} onChange={(e) => setInt(e.target.value)}  />
-      </div>
-      Критичність мислення
-      <br />
-      <span id="critical_text">{crt}</span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={crt} onChange={(e) => setCrt(e.target.value)} /> 
-      </div>
-      Ініціативність
-      <br />
-      <span id="initiate_text">{ini}</span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={ini} onChange={(e) => setIni(e.target.value)}/>
-      </div>
-      Поступливість
-      <br />
-      <span id="ustupchivost_text">{pst}</span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={pst} onChange={(e) => setPst(e.target.value)}/>
-      </div>
-      Дружелюбність
-      <br />
-      <span id="friendlyest_text">{dru} </span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={dru} onChange={(e) => setDru(e.target.value)}/> 
-      </div>
-      Емоційність
-      <br />
-      <span id="emotions_text">{emo}</span>
-      <div className="inputRow">
-        <input className="no_swipe" type="range" min="1" max="4" value={emo} onChange={(e) => setEmo(e.target.value)}/> 
-      </div>
-      <br />
-      <button onClick={onStart}>
-          ОБРОБИТИ
-      </button>
-      {
-        vpluvashka !== false && <Portal node={document && document.getElementById('portal')}>
-        <div className="vspluvashka" id="vspluvashka">
-
-            <div className="vspluvashka_content">
-                <h3>Характеристика клієнта</h3>
-                <p>
-                  {text1}  
-                </p>
-                <h3>Головне для клієнта</h3>
-                <p>
-                {text2}  
-                </p>
-                <h3>Порада консультанту</h3>
-                <p>
-                {text3}  
-                </p>
-                <button onClick={() => setVspluvashka(false)}>
-                    ОК
-                </button>
+    return (
+        <div className="helper">
+            <h2>
+                ТИП КЛІЄНТА
+            </h2>
+            Інтелект
+            <br />
+            <span id="inteligece_text">{int}</span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={int} onChange={(e) => setInt(e.target.value)}  />
             </div>
+            Критичність мислення
+            <br />
+            <span id="critical_text">{crt}</span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={crt} onChange={(e) => setCrt(e.target.value)} /> 
+            </div>
+            Ініціативність
+            <br />
+            <span id="initiate_text">{ini}</span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={ini} onChange={(e) => setIni(e.target.value)}/>
+            </div>
+            Поступливість
+            <br />
+            <span id="ustupchivost_text">{pst}</span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={pst} onChange={(e) => setPst(e.target.value)}/>
+            </div>
+            Дружелюбність
+            <br />
+            <span id="friendlyest_text">{dru} </span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={dru} onChange={(e) => setDru(e.target.value)}/> 
+            </div>
+            Емоційність
+            <br />
+            <span id="emotions_text">{emo}</span>
+            <div className="inputRow">
+                <input className="no_swipe" type="range" min="1" max="4" value={emo} onChange={(e) => setEmo(e.target.value)}/> 
+            </div>
+            <br />
+            <Button onClick={onStart} type="primary">
+                ОБРОБИТИ
+            </Button>
+            {
+                vpluvashka !== false && <Portal>
+                        <div className="vspluvashka" id="vspluvashka">
+
+                            <div className="vspluvashka_content">
+                                <h3>Характеристика клієнта</h3>
+                                <p>
+                                {text1}  
+                                </p>
+                                <h3>Головне для клієнта</h3>
+                                <p>
+                                {text2}  
+                                </p>
+                                <h3>Порада консультанту</h3>
+                                <p>
+                                {text3}  
+                                </p>
+                                
+                                <Button  type="primary" onClick={() => setVspluvashka(false)}>
+                                    ОК
+                                </Button>
+                            </div>
+                        </div>
+                </Portal>
+            }
         </div>
-    </Portal>
-    }
-        
-    </div>
-  );
+    );
 }
 
 export default React.memo(Helper);
