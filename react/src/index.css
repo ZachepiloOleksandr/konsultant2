@@ -69,6 +69,10 @@ button {
   width: 100px;
 }
 
+.slick-track {
+  min-height: 100vh;
+}
+
 input[type=range]:focus {
   outline: none;
 }
