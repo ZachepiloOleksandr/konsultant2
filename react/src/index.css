@@ -73,6 +73,19 @@ button {
   min-height: 100vh;
 }
 
+.carusel_prev, .carusel_next {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: 2px solid rgb(194, 194, 194);
+}
+
+.carusel_next {
+  left: unset;
+  right: 20px;
+}
+
 input[type=range]:focus {
   outline: none;
 }
